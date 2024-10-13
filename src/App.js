@@ -1,13 +1,10 @@
 import React from 'react';
-import Register from './components/Register';
-import Login from './components/Login';
+import LoginPage from './pages/LoginPage';
 
 const App = () => {
   return (
     <div>
-      <h1>Authentication System</h1>
-      <Register />
-      <Login />
+      <LoginPage/>
     </div>
   );
 };
