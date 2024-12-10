@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Grid, Typography, Container, Paper, Box, Button } from "@mui/material";
 import Login from "../components/Login";
 import Register from "../components/Register";
+import TokenVerifyButton from "../components/TokenVerifyButton";
+
 
 const LoginPage = () => {
   const [state, setState] = useState(true);
@@ -42,6 +44,7 @@ const LoginPage = () => {
         <div className="mt-8 justify-center align-center">
           --------------------------------- or ---------------------------------
           <p className="text-blue-700"> Google Sign Up</p>
+          {/* <TokenVerifyButton/> */}
         </div>
       </Paper>
     </Container>

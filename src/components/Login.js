@@ -13,17 +13,18 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_CLIENT_BC_URL}/api/auth/login`,
-        { email, password }
+        { email, password },
+        {withCredentials: true,}
       );
+      // const token = response.data.token;
+      // localStorage.setItem('token', token);
+      window.location.href = `${process.env.REACT_APP_ADMIN_UI_URL}`;
 
-      if (response.status === 200) {
-        window.location.href = `${process.env.REACT_APP_ADMIN_UI_URL}`;
-      }
     } catch (error) {
       console.error("There was an error!", error);
     }
@@ -40,9 +41,9 @@ const Login = () => {
         }}
       >
         <Typography component="h1" variant="h5" className=" mb-4">
-          LOGIN
+          Login
         </Typography>
-        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+        <Box component="form" onSubmit={handleLogin} noValidate sx={{ mt: 1 }}>
           <TextField
             margin="normal"
             required
