@@ -36,7 +36,7 @@ const LoginPage = () => {
           <div className="flex gap-2">
             <p>Already have an account? </p>
             <Box onClick={() => setState(true)} className="cursor-pointer">
-              <p className="text-blue-700">Login</p>
+              <p className="text-blue-700">Login.</p>
             </Box>
           </div>
         )}
